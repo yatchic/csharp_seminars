@@ -1,12 +1,21 @@
-﻿
-int digit=int.Parse(Console.ReadLine()!);
-Random rnd = new Random(digit);
-int value = rnd.Next(10,99);
-Console.WriteLine($"случайное число от 10 до 99 : {value}");
-int integral=value/10;
-int remainder=value%10;
-if(integral>=remainder){Console.WriteLine(integral);}
-else{Console.WriteLine(remainder);}
-
-
-
+﻿Console.WriteLine("введите число");
+int digit = int.Parse(Console.ReadLine()!);
+if (digit < 10)
+{
+    Console.WriteLine(digit);
+}
+else
+{
+    string s = digit.ToString();
+    for (int i = 0; i <= s.Length - 1; i++)
+    {
+        if (i == s.Length - 1)
+        {
+            Console.Write(s[i]);
+        }
+        else
+        {
+            Console.Write($"{s[i]},");
+        }
+    }
+}
