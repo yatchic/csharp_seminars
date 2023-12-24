@@ -1,6 +1,6 @@
 ﻿
 int a=int.Parse(Console.ReadLine()!);
-int SecondNum=a/10%10;
-int thirdNum=a%10;
+int b=int.Parse(Console.ReadLine()!);
+if(a%b==0){Console.WriteLine("да");}
+else{Console.WriteLine("нет "+a%b);}
 
-Console.WriteLine(Math.Pow(SecondNum,thirdNum));
