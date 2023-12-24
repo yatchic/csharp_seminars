@@ -1,10 +1,10 @@
 ﻿Console.WriteLine("введите число от 10 до 99");
 int digit=int.Parse(Console.ReadLine()!);
-while (digit<10&&digit>99)
+while (digit<10 || digit>99)
 {
-    Console.WriteLine("введено неверное чесло");
+    Console.WriteLine("введено неверное число");
     Console.WriteLine("введите число от 10 до 99");
-int digit=int.Parse(Console.ReadLine()!);
+    digit=int.Parse(Console.ReadLine()!);
 }
 
 int integral=digit/10;
