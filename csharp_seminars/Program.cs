@@ -1,8 +1,12 @@
-﻿int n=10;
-int[] array={2,5,4,7,8,35,1,3,8,5};
+﻿int n=5;
+int[] array={2,4,7,3,9};
 int i=0;
-
+int max=array[0];
 while(i<n){
-  if(array[i]%2==0){Console.Write($"{array[i]} ");}
-   i=i+1;
+  if(array[i]>max){
+    max=array[i];
+  }
+  i=i+1;
+   
 }
+Console.WriteLine($"max={max}");
