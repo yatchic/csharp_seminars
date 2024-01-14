@@ -20,17 +20,26 @@ int[] MassNums(int size, int from, int to)
     return arr;
 }
 
-int numberOfEvenNumbers(int[]arr){
-    int count=0;
-      for(int i=0;i<arr.Length;i++){
-          if(arr[i]%2==0){count++;}
-
-      }
-     return count;  
-
+int[] perevorotMassiva(int[] arr) {
+    int buf = 0;
+    if(arr.Length%2==0){for (int i = 0; i < arr.Length / 2; i++) {
+        buf = arr[i];
+        arr[i] = arr[arr.Length - i - 1];
+        arr[arr.Length - i - 1] = buf;
+    }}else{
+        for (int i = 0; i < arr.Length / 2; i++) {
+        buf = arr[i];
+        arr[i] = arr[arr.Length - i - 1];
+        arr[arr.Length - i - 1] = buf;
+    }
+    }
+    return arr;
 }
+        Console.WriteLine("введите размер массива");
+      int size = int.Parse(Console.ReadLine());
 
-      int[]arr=MassNums(10, 100, 999);
+      int[]arr=MassNums(size, 1, 100);
       Print(arr);
-        int count=numberOfEvenNumbers(arr);
-        Console.WriteLine($"четных чисел={count}");
+        int[] arrPerevernutiy=perevorotMassiva(arr);
+        Console.WriteLine("");
+        Print(arrPerevernutiy);
