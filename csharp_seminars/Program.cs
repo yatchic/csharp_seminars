@@ -1,54 +1,50 @@
-﻿Console.WriteLine("\nначало программы");
-Random rnd = new Random();
-int rand_number = rnd.Next(1, 100000);
-Console.Write($"Случайное число = {rand_number}");
+﻿ 
 
-int size = 0;
-int div = rand_number / 10;
-if(div > 0) {
-    size++;
-}
-while(div > 0) {
-    div = div / 10;
-    if(div > 0) {
-        size++;
-    }
-}
-size++;
-Console.Write($"\nКоличество цифр = {size}");
+int[] MassNums(int size, int from, int to)
+{
+    int[] arr = new int[size];
 
-int rest = 0;
-div = 10000;
-int[] arr = new int[size];
-for(int i = 0; i < arr.Length; i++){
-    if(i == 0){
-        rest = rand_number % div;
-        arr[i] = rand_number / div;
-    } else {
-        rand_number = rest;
-        div = div / 10;
-        rest = rand_number % div;
-        arr[i] = rand_number / div;
-    }
+    for (int i = 0; i < size; i++)
+        arr[i] = new Random().Next(from, to + 1);
+    return arr;
 }
- Console.WriteLine($"\nразмер массива={arr.Length}");
- Console.Write("массив:");
-for(int i = 0; i < arr.Length; i++){Console.Write($"{arr[i]} ");}
- for(int i = 0; i < arr.Length; i++){
-    for(int j = i + 1; j < arr.Length; j++){
-        
-        if(arr[i] < arr[j]){
-             
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-    }
-}
- Console.WriteLine("");
 
-Console.Write("отсортированный массив:");
-for(int i = 0; i < arr.Length; i++){
-    Console.Write($"{arr[i]} ");
+
+ void Print(int[] arr)
+{
+    int size = arr.Length;
+
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write($"{arr[i]} ");
+    }
+    Console.WriteLine();
 }
-Console.WriteLine("\nконец программы");
+
+
+ int myFunction(int [] arr)
+  {
+int count=0;
+for(int i=0;i<arr.Length;i++){
+    if(arr[i]%7==0 && arr[i]%10==1){
+        count++;
+
+    }
+
+}
+return count;
+}
+
+int num = int.Parse(Console.ReadLine()!);
+int start = int.Parse(Console.ReadLine()!);
+int stop = int.Parse(Console.ReadLine()!);
+
+int[] mass = MassNums(num, start, stop);
+Print(mass);
+
+int result=myFunction(mass);
+Console.WriteLine(result);
+
+
+
+ 
